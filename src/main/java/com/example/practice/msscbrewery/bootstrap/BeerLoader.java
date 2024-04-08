@@ -15,7 +15,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ResourceUtils;
 
-@Component
+//@Component
 @RequiredArgsConstructor
 public class BeerLoader implements CommandLineRunner {
 
@@ -49,7 +49,7 @@ public class BeerLoader implements CommandLineRunner {
                 Beer.builder()
                     .beerName(StringUtils.abbreviate(record.getBeer(), 50))
                     .beerStyle(beerStyle.name())
-                    .upc(record.getRow().longValue())
+                    .upc(String.valueOf(record.getRow()))
                     .quantityOnHand(record.getCount())
                     .price(BigDecimal.TEN)
                     .build()

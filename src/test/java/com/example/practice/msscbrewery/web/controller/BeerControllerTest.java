@@ -84,7 +84,7 @@ class BeerControllerTest {
         return BeerDTO.builder()
             .beerName("Test Name")
             .beerStyle(BeerStyleEnum.LAGER)
-            .upc(Long.MAX_VALUE)
+            .upc(String.valueOf(Long.MAX_VALUE))
             .price(BigDecimal.TEN)
             .build();
     }
