@@ -10,11 +10,14 @@ import com.example.practice.msscbrewery.web.model.BeerPagedList;
 import com.example.practice.msscbrewery.web.model.BeerStyleEnum;
 import java.util.UUID;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class BeerServiceImpl implements BeerService {
@@ -22,6 +25,7 @@ public class BeerServiceImpl implements BeerService {
     private final BeerRepository beerRepository;
     private final BeerMapper beerMapper;
 
+    @Cacheable(value = "beerCache", key = "#beerId", condition = "#showInventoryOnHand == false")
     @Override
     public BeerDTO getBeerById(UUID beerId, Boolean showInventoryOnHand) {
         Beer beer = beerRepository.findById(beerId).orElseThrow(NotFoundException::new);
@@ -55,6 +59,7 @@ public class BeerServiceImpl implements BeerService {
     }
 
 
+    @Cacheable(value = "beerListCache", condition = "#showInventoryOnHand==false")
     @Override
     public BeerPagedList listBeers(Integer pageNumber, Integer pageSize, String beerName, BeerStyleEnum beerStyle, Boolean showInventoryOnHand) {
         Page<Beer> beerPage;
