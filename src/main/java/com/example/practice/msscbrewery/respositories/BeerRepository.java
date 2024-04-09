@@ -1,6 +1,7 @@
 package com.example.practice.msscbrewery.respositories;
 
 import com.example.practice.msscbrewery.domain.Beer;
+import java.util.Optional;
 import java.util.UUID;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -12,4 +13,5 @@ public interface BeerRepository extends ListPagingAndSortingRepository<Beer, UUI
     Page<Beer> findBeersByBeerNameAndBeerStyle(String beerName, String beerStyle, PageRequest pageRequest);
     Page<Beer> findBeersByBeerName(String beerName, PageRequest pageRequest);
     Page<Beer> findBeersByBeerStyle(String beerStyle, PageRequest pageRequest);
+    Optional<Beer> findBeersByUpc(String upc);
 }
