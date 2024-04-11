@@ -36,7 +36,6 @@ public class Beer {
     @Column(unique = true)
     private String upc;
     private BigDecimal price;
-    private Integer quantityOnHand;
 
     @Version
     private Long version;
@@ -47,4 +46,7 @@ public class Beer {
 
     @UpdateTimestamp
     private Timestamp modifiedDate;
+
+    private Integer minOnHand;
+    private Integer quantityToBrew;
 }

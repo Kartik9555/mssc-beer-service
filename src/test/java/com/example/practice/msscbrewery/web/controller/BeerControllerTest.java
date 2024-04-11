@@ -1,7 +1,7 @@
 package com.example.practice.msscbrewery.web.controller;
 
+import com.example.practice.model.BeerDTO;
 import com.example.practice.msscbrewery.service.BeerService;
-import com.example.practice.msscbrewery.web.model.BeerDTO;
 import com.example.practice.msscbrewery.web.model.BeerStyleEnum;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.math.BigDecimal;

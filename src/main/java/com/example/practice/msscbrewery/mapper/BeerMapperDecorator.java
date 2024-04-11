@@ -1,8 +1,8 @@
 package com.example.practice.msscbrewery.mapper;
 
+import com.example.practice.model.BeerDTO;
 import com.example.practice.msscbrewery.domain.Beer;
 import com.example.practice.msscbrewery.service.inventory.BeerInventoryServiceClient;
-import com.example.practice.msscbrewery.web.model.BeerDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public abstract class BeerMapperDecorator implements BeerMapper {

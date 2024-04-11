@@ -1,5 +1,6 @@
 package com.example.practice.msscbrewery.web.model;
 
+import com.example.practice.model.BeerDTO;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;

@@ -12,7 +12,6 @@ import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 import org.springframework.util.ResourceUtils;
 
 //@Component
@@ -50,7 +49,7 @@ public class BeerLoader implements CommandLineRunner {
                     .beerName(StringUtils.abbreviate(record.getBeer(), 50))
                     .beerStyle(beerStyle.name())
                     .upc(String.valueOf(record.getRow()))
-                    .quantityOnHand(record.getCount())
+                    .minOnHand(record.getCount())
                     .price(BigDecimal.TEN)
                     .build()
             );

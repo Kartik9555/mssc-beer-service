@@ -1,5 +1,6 @@
-package com.example.practice.msscbrewery.web.model;
+package com.example.practice.model;
 
+import com.example.practice.msscbrewery.web.model.BeerStyleEnum;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
